@@ -17,7 +17,7 @@ function minLowercase(length = 1, message) {
         message: msg,
         params: { length },
         test(value) {
-            return isNullOrUndefined(value) || (value.match(/[a-z]/g) || []).length >= length
+            return isNullOrUndefined(value) || (value.match(/[a-zа-я]/g) || []).length >= length
         }
     })
 } // minLowercase()
@@ -30,7 +30,7 @@ function minUppercase(length = 1, message) {
         message: msg,
         params: { length },
         test(value) {
-            return isNullOrUndefined(value) || (value.match(/[A-Z]/g) || []).length >= length
+            return isNullOrUndefined(value) || (value.match(/[A-ZА-Я]/g) || []).length >= length
         }
     })
 } // minUppercase()
@@ -56,7 +56,7 @@ function minSymbols(length = 1, message) {
         message: msg,
         params: { length },
         test(value) {
-            return isNullOrUndefined(value) || (value.match(/[^a-zA-Z0-9\s]/g) || []).length >= length
+            return isNullOrUndefined(value) || (value.match(/[^a-zа-яA-ZА-Я0-9\s]/g) || []).length >= length
         }
     })
 } // minSymbol()
